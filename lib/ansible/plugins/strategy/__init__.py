@@ -508,7 +508,7 @@ class StrategyBase:
                             ),
                         )
                 else:
-                    self._tqm._stats.increment('ok', original_host.name)
+                    self._tqm._stats.increment('failures', original_host.name)
                     if 'changed' in task_result._result and task_result._result['changed']:
                         self._tqm._stats.increment('changed', original_host.name)
                 self._tqm.send_callback('v2_runner_on_failed', task_result, ignore_errors=ignore_errors)
